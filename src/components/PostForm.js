@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 import { useHistory } from "react-router";
 import Gratitude from "./../assets/grForm.png";
 import { useDispatch } from "react-redux";
-import { notEkle } from "../actions";
+import { notEkleAPI } from "../actions";
 import { toast } from "react-toastify";
 
 export default function PostForm() {
@@ -27,7 +27,7 @@ export default function PostForm() {
         .join("|"),
     };
 
-    dispatch(notEkle(yeniNot));
+    dispatch(notEkleAPI(yeniNot));
 
     notToast();
     setTimeout(() => history.push("/notlar"), 2000);

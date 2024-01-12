@@ -2,7 +2,7 @@ import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { tr } from "date-fns/locale";
 import { useDispatch } from "react-redux";
-import { NOT_SIL, notSil } from "../actions";
+import { notSil, notSilAPI } from "../actions";
 import { toast } from "react-toastify";
 
 export default function Post({ item }) {
@@ -10,7 +10,7 @@ export default function Post({ item }) {
   function handleSil() {
     // burada ilgili eylemi dispatch edin
     // sonra toast mesajı gösterin
-    dispatch(notSil(item.id));
+    dispatch(notSilAPI(item.id));
     toast.warn("Not Silindi", { autoClose: 2000 });
   }
 
